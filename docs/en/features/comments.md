@@ -73,3 +73,7 @@ comments:
     autoInit: true
     autoNonInteractiveSso: false
 ```
+
+## Following the theme
+
+When `theme` (giscus, utterances, comentario) or `darkMode` (artalk) is empty or set to `preferred_color_scheme` / `preferred-color-scheme` / `auto`, comments follow the site's light/dark switch live. A fixed value disables the sync so your explicit choice is not overridden.

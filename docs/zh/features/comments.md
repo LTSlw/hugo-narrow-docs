@@ -73,3 +73,7 @@ comments:
     autoInit: true
     autoNonInteractiveSso: false
 ```
+
+## 主题跟随
+
+`theme`（giscus、utterances、comentario）和 `darkMode`（artalk）留空或使用 `preferred_color_scheme` / `preferred-color-scheme` / `auto` 时，评论跟随站点的明暗切换实时更新。设成固定值时不跟随，避免覆盖你的显式选择。
