@@ -111,3 +111,13 @@ mainSections: ["posts", "projects", "pages"]
 ```
 
 The recent posts of home page will use the first section.
+
+## Search
+
+The search index is generated at build time. You can tune how much of each page goes into it, or turn search off entirely.
+
+```yaml {filename="config/_default/params.yaml"}
+search:
+  enabled: true            # hide the dock button and skip the search script when false
+  indexContentLength: 2000 # characters of each page stored in the index
+```

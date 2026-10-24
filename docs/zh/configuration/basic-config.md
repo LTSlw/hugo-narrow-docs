@@ -111,3 +111,13 @@ mainSections: ["posts", "projects", "pages"]
 ```
 
 主页最近文章列表会使用第一个 Section。
+
+## 搜索
+
+搜索索引在构建时生成，可以调整每篇文章写入索引的字符数，也可以整体关闭搜索。
+
+```yaml {filename="config/_default/params.yaml"}
+search:
+  enabled: true            # 关闭后 Dock 隐藏搜索按钮，也不再加载搜索脚本
+  indexContentLength: 2000 # 每篇文章写入索引的字符数
+```

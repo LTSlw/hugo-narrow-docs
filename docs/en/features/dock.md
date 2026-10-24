@@ -12,11 +12,21 @@ Placement is fixed; there is no display-mode parameter:
 - Everywhere else (narrow screens, portrait, vertically folded devices) it is a bottom capsule and stays visible.
 - Back-to-top appears after scrolling past 80% of the viewport.
 - When comments are enabled, the dock gets a jump-to-comments button.
+- When search is disabled, the search button is skipped and the search script is not loaded.
 
 ```yaml {filename="params.yaml"}
 comments:
   enabled: true
   system: "giscus"
+```
+
+## Search
+
+Search opens from the dock button or `Ctrl/Cmd + K`; the index is generated at build time. Turn it off entirely:
+
+```yaml {filename="params.yaml"}
+search:
+  enabled: true
 ```
 
 ## Table of contents

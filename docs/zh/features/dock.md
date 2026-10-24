@@ -12,11 +12,21 @@ Dock 是主题唯一的页面功能入口，包含首页、菜单、搜索、目
 - 其他情况（窄屏、竖屏、折叠屏纵向布局）显示为底部横排胶囊，常驻。
 - 返回顶部按钮在滚动超过 80% 视口后出现。
 - 评论启用时，Dock 会多一个跳转到评论区的按钮。
+- 搜索关闭时，Dock 不显示搜索按钮，搜索脚本也不会加载。
 
 ```yaml {filename="params.yaml"}
 comments:
   enabled: true
   system: "giscus"
+```
+
+## 搜索
+
+搜索由 Dock 的搜索按钮或 `Ctrl/Cmd + K` 打开，索引在构建时生成。可以整体关闭：
+
+```yaml {filename="params.yaml"}
+search:
+  enabled: true
 ```
 
 ## 目录
