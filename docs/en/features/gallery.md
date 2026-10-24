@@ -15,6 +15,8 @@ lightbox:
   enabled: true
 ```
 
+Each gallery has a single layout button in its top-right corner. Clicking it cycles through `justified` → `masonry` → `grid`. The choice is per page and is not persisted.
+
 `gap`, `targetRowHeight`, `lastRowBehavior`, `columnWidth`, and `columns` use theme defaults; most sites do not need to set them. Override them in page front matter when needed:
 
 ```yaml {filename="gallery-post.md"}

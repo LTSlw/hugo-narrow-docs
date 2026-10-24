@@ -15,6 +15,8 @@ lightbox:
   enabled: true
 ```
 
+图库右上角只有一个布局切换按钮，点击会在 `justified` → `masonry` → `grid` 之间循环。切换只在当前页面生效，不写入配置。
+
 `gap`、`targetRowHeight`、`lastRowBehavior`、`columnWidth`、`columns` 由主题内部给默认值，普通站点不需要配置。需要精细调整时可以在页面 frontmatter 覆盖：
 
 ```yaml {filename="gallery-post.md"}
