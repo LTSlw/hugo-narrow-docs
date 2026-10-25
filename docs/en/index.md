@@ -30,5 +30,5 @@ features:
     details: Built on Hugo for instant loads, with semantic markup and built-in SEO templates.
   - icon: 🧩
     title: Features based on user experience
-    details: Galleries, formulas, charts, gallery, tabs and more — built-in and extended shortcodes ready to use.
+    details: Galleries, formulas, charts, tabs and more — built-in and extended shortcodes ready to use.
 ---
