@@ -27,6 +27,20 @@ announcement:
 
 `autoClose` only takes effect when it is greater than 0. When the announcement closes automatically, it is marked as dismissed for the current session, the same as clicking the close button.
 
+## Images
+
+Markdown images and post covers get a responsive `srcset`. Candidate widths are fractions of `contentWidth` (0.5, 0.75, 1, 1.5 and 2 times), capped at twice the reading width and at the intrinsic image width, so changing `contentWidth` also changes the generated sizes. The `sizes` attribute follows the same value.
+
+For JPEG and PNG sources the theme also emits a WebP `<source>`, which browsers prefer. AVIF, WebP, and GIF sources are served as-is.
+
+```yaml {filename="params.yaml"}
+image:
+  webp: true # emit WebP variants for JPEG/PNG
+  quality: 82 # WebP quality, 1-100
+```
+
+Set `webp: false` to serve only the original format. Hugo caches the generated variants between builds.
+
 ## Date localization
 
 The theme uses Hugo's `time.Format`, so dates follow the current language's `locale`. There are only three variants:

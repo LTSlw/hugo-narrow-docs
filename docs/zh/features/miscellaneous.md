@@ -27,6 +27,20 @@ announcement:
 
 `autoClose` 大于 0 时生效。自动关闭后会在当前会话内记为已关闭，效果与点击关闭按钮一致。
 
+## 图片
+
+Markdown 图片和文章封面会生成响应式 `srcset`。候选宽度按 `contentWidth` 的比例取（0.5、0.75、1、1.5、2 倍），上限为阅读宽度的两倍与图片原始宽度，因此调整 `contentWidth` 时生成的尺寸也会跟着变。`sizes` 使用同一个值。
+
+JPEG 和 PNG 会额外生成 WebP `<source>`，浏览器优先使用。AVIF、WebP、GIF 直接使用原图。
+
+```yaml {filename="params.yaml"}
+image:
+  webp: true # 为 JPEG/PNG 生成 WebP 变体
+  quality: 82 # WebP 质量，1-100
+```
+
+`webp: false` 时只输出原格式。生成的变体会被 Hugo 缓存，后续构建不会重复处理。
+
 ## 日期本地化
 
 主题使用 Hugo 的 `time.Format`，按当前语言的 `locale` 自动本地化日期。只保留三个变体：
