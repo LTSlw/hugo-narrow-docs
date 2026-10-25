@@ -30,3 +30,7 @@ analytics:
     src: "https://umami.example.com/script.js"
     domains: "example.com"
 ```
+
+选中的 provider 必须填好必填项才会输出脚本：google、baidu、clarity 为 `id`，umami 为 `id` 和 `src`。缺少时构建会给出警告。
+
+要用主题未内置的服务，把 `provider` 设成它的名字，并在站点里添加 `layouts/_partials/features/analytics/<名字>.html`。

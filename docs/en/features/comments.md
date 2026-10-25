@@ -4,7 +4,7 @@ title: Comments
 
 # Comments
 
-Hugo Narrow supports kinds of comments:
+Hugo Narrow supports the following comment providers:
 
 - [artalk](https://artalk.js.org/)
 - [disqus](https://disqus.com/)
@@ -15,18 +15,18 @@ Hugo Narrow supports kinds of comments:
 - [Comentario](https://comentario.app/)
 
 > [!TIP]
-> The parameter of comments can be coverd by posts frontmatter.
+> Comments settings can be overridden in a post's front matter.
 >
 > ```yaml {filename="first-post.md"}
 > comments:
 >   enabled: true
->   system: "giscus"
+>   provider: "giscus"
 > ```
 
 ```yaml {filename="params.yaml"}
 comments:
   enabled: false
-  system: "giscus"
+  provider: "giscus"
   giscus:
     repo: "tom2almighty/hugo-narrow-giscus"
     repoId: ""
@@ -74,6 +74,22 @@ comments:
     autoNonInteractiveSso: false
 ```
 
+A provider only renders when its required keys are set:
+
+- giscus: `repo`, `repoId`, `categoryId`
+- utterances: `repo`
+- disqus: `shortname`
+- waline: `serverURL`
+- artalk: `server`
+- twikoo: `envId`
+- comentario: `server`
+
+Otherwise the comments section shows a short "not configured" notice.
+
 ## Following the theme
 
 Comments follow the site's light/dark switch live when the theme value is left empty, or when it uses the provider's "follow system" value: `preferred_color_scheme` for giscus, `preferred-color-scheme` for utterances, and `auto` for artalk. Comentario follows the site only when `theme` is empty. A fixed value disables the sync so your explicit choice is not overridden.
+
+## Custom provider
+
+Set `provider` to any name and add `layouts/_partials/features/comments/<name>.html` to your site. Your partial takes precedence over the theme and receives a dict with `Page`, `Site`, `id`, and `config` (the block matching `provider`).
