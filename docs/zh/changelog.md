@@ -4,6 +4,39 @@ title: "更新日志"
 
 # 更新日志
 
+## v2.1.0 - 2026-10-25
+
+- refactor!: 评论参数 `comments.system` 改名为 `comments.provider`，站点配置和页面 frontmatter 都需要同步修改。
+- refactor: 评论和统计的 provider 按名称动态分发；站点放一个同名 partial 即可扩展，未知名称会输出构建警告。
+- feat: 搜索改用 MiniSearch + `Intl.Segmenter`，无空格语言按词切分；搜索脚本拆为独立入口，关闭搜索时不再加载并输出空索引。
+- feat: 图片响应式宽度改为按 `contentWidth` 推导，JPEG/PNG 额外生成 WebP；新增 `image.webp` 和 `image.quality`。
+- feat: 文章页面包屑向下滚动隐藏，向上滚动收起为标题胶囊，点击胶囊平滑展开为原面包屑。
+- feat: 图库间距、列数等布局参数可在 `params.gallery` 统一设置并按页面覆盖；smart-gallery 改为本地打包，布局切换合并为单个循环按钮。
+- feat: 标签页的 tablist 改由短代码输出，无 JS 时第一个面板仍可读，`tabs.js` 只负责状态和键盘。
+- feat: 适配 iOS 安全区；触摸设备上放大 Dock、系列步骤、图库切换、搜索清除和通知关闭按钮。
+- fix: giscus 要求同时配置 `repo`、`repoId`、`categoryId`；统计 provider 缺少必填项时不再输出空脚本，改为构建警告。
+- fix: 关闭搜索时索引输出为空数组，不再导致构建失败。
+- fix: 图库布局按钮通过 `aria-label` 播报当前布局。
+- fix: Twikoo 跳过首次主题同步，只响应后续主题切换。
+- fix: 修正 Go 模块路径为 `github.com/tom2almighty/hugo-narrow/v2`。
+- ci: 新增格式检查、`compiled.css` 产物一致性和示例站点构建检查，PR 同样触发。
+- chore: 新增孟加拉语翻译。
+
+## v2.0.2 - 2026-10-22
+
+- fix: 移除 SVG sprite preload，避免浏览器重复下载和 Chrome 的未使用 preload 警告。
+- fix: Dock 容器由 `nav` 改为 `div`，`role="toolbar"` 现在合法。
+- fix: Dock 菜单按钮改用 `menu` 图标、目录按钮改用 `toc` 图标，移除未使用的展开/收起图标样式。
+- feat: 新增 `announcement.autoClose`，按秒自动关闭通知并记录当前会话的关闭状态。
+- chore: 清理 26 个未使用的图标，sprite 从约 27 KB 降至约 17.5 KB。
+
+## v2.0.1 - 2026-10-22
+
+- fix: 修复部署在子路径时的栏目入口、分页、菜单和 404 返回首页链接。
+- fix: Dock 收起后只保留单个按钮的宽度。
+- fix: 重新区分 Dock 收起、展开和目录图标。
+- chore: GitHub Pages 站点增加 v1 演示，恢复文档、演示和中文 README 链接。
+
 ## v2.0.0 - 2026-10-22
 
 - refactor!: 移除顶部导航栏，页面导航改为 Dock，页面位置由上下文栏展示。
