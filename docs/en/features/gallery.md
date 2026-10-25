@@ -15,7 +15,7 @@ lightbox:
   enabled: true
 ```
 
-Each gallery has a single layout button in its top-right corner. Clicking it cycles through `justified` → `masonry` → `grid`. The choice is per page and is not persisted.
+Each gallery has a single layout button in its top-right corner. Clicking it cycles through `justified` → `masonry` → `grid`. The choice applies to that gallery group only and resets to `defaultLayout` on reload.
 
 `gap`, `targetRowHeight`, `lastRowBehavior`, `columnWidth`, and `columns` use theme defaults; most sites do not need to set them. Override them in page front matter when needed:
 
