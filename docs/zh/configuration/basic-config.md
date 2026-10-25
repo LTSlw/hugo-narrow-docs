@@ -121,3 +121,15 @@ search:
   enabled: true            # 关闭后 Dock 隐藏搜索按钮，也不再加载搜索脚本
   indexContentLength: 2000 # 每篇文章写入索引的字符数
 ```
+
+## 外观默认值
+
+外观参数决定页面初始状态，读者仍可以在外观面板里调整它们。运行时修改保存在浏览器本地，不会写回站点配置。
+
+```yaml {filename="config/_default/params.yaml"}
+contentWidth: "56rem" # 正文列宽，接受 rem / px；读者可在 40-90rem 间调整
+backdropBlur: 12      # 浮动元素的背景模糊半径，0-24，单位 px
+grainSize: 25         # 背景颗粒尺寸，0-100，0 关闭
+```
+
+`contentWidth` 同时决定响应式图片的宽度阶梯，修改后构建会按新的阅读宽度生成图片尺寸。

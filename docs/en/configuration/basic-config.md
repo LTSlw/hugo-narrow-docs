@@ -121,3 +121,15 @@ search:
   enabled: true            # hide the dock button and skip the search script when false
   indexContentLength: 2000 # characters of each page stored in the index
 ```
+
+## Appearance defaults
+
+Appearance parameters set the initial page state. Readers can still change them in the appearance panel; runtime changes are stored in the browser and never written back to the site config.
+
+```yaml {filename="config/_default/params.yaml"}
+contentWidth: "56rem" # reading column width, rem or px; readers can adjust 40-90rem
+backdropBlur: 12      # backdrop blur radius for floating surfaces, 0-24 px
+grainSize: 25         # background grain size, 0-100; 0 disables
+```
+
+`contentWidth` also drives the responsive image width ladder, so changing it regenerates image sizes for the new reading width.
