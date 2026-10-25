@@ -64,7 +64,7 @@ comments:
   comentario:
     server: ""
     lang: "zh-CN"
-    theme: "" # light, dark, or empty to follow browser preference
+    theme: "" # light、dark，留空则跟随站点主题
     domainId: ""
     cssOverride: ""
     liveUpdate: true
@@ -76,4 +76,4 @@ comments:
 
 ## 主题跟随
 
-`theme`（giscus、utterances、comentario）和 `darkMode`（artalk）留空或使用 `preferred_color_scheme` / `preferred-color-scheme` / `auto` 时，评论跟随站点的明暗切换实时更新。设成固定值时不跟随，避免覆盖你的显式选择。
+主题值留空，或使用对应组件的“跟随系统”值时会实时跟随站点明暗切换：giscus 为 `preferred_color_scheme`，utterances 为 `preferred-color-scheme`，artalk 为 `auto`。Comentario 仅在 `theme` 留空时跟随。设成固定值时不跟随，避免覆盖你的显式选择。

@@ -64,7 +64,7 @@ comments:
   comentario:
     server: ""
     lang: "zh-CN"
-    theme: "" # light, dark, or empty to follow browser preference
+    theme: "" # light, dark, or empty to follow the site theme
     domainId: ""
     cssOverride: ""
     liveUpdate: true
@@ -76,4 +76,4 @@ comments:
 
 ## Following the theme
 
-When `theme` (giscus, utterances, comentario) or `darkMode` (artalk) is empty or set to `preferred_color_scheme` / `preferred-color-scheme` / `auto`, comments follow the site's light/dark switch live. A fixed value disables the sync so your explicit choice is not overridden.
+Comments follow the site's light/dark switch live when the theme value is left empty, or when it uses the provider's "follow system" value: `preferred_color_scheme` for giscus, `preferred-color-scheme` for utterances, and `auto` for artalk. Comentario follows the site only when `theme` is empty. A fixed value disables the sync so your explicit choice is not overridden.
