@@ -29,9 +29,7 @@ announcement:
 
 ## 图片
 
-Markdown 图片和文章封面会生成响应式 `srcset`。候选宽度按 `contentWidth` 的比例取（0.5、0.75、1、1.5、2 倍），上限为阅读宽度的两倍与图片原始宽度，因此调整 `contentWidth` 时生成的尺寸也会跟着变。`sizes` 使用同一个值。
-
-JPEG 和 PNG 会额外生成 WebP `<source>`，浏览器优先使用。AVIF、WebP、GIF 直接使用原图。
+Markdown 图片和文章封面会自动生成响应式尺寸，宽度跟随 `contentWidth`。JPEG 和 PNG 额外提供 WebP 版本，浏览器优先使用；AVIF、WebP、GIF 直接使用原图。
 
 ```yaml {filename="params.yaml"}
 image:
@@ -39,7 +37,7 @@ image:
   quality: 82 # WebP 质量，1-100
 ```
 
-`webp: false` 时只输出原格式。生成的变体会被 Hugo 缓存，后续构建不会重复处理。
+`webp: false` 时只输出原格式。
 
 ## 日期本地化
 

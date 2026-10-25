@@ -32,5 +32,3 @@ analytics:
 ```
 
 The selected provider only renders when its required keys are set: `id` for google, baidu, and clarity; `id` and `src` for umami. A missing key logs a build warning.
-
-To use a provider the theme does not ship, set `provider` to its name and add `layouts/_partials/features/analytics/<name>.html` to your site.

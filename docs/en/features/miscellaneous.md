@@ -29,9 +29,7 @@ announcement:
 
 ## Images
 
-Markdown images and post covers get a responsive `srcset`. Candidate widths are fractions of `contentWidth` (0.5, 0.75, 1, 1.5 and 2 times), capped at twice the reading width and at the intrinsic image width, so changing `contentWidth` also changes the generated sizes. The `sizes` attribute follows the same value.
-
-For JPEG and PNG sources the theme also emits a WebP `<source>`, which browsers prefer. AVIF, WebP, and GIF sources are served as-is.
+Markdown images and post covers get responsive sizes derived from `contentWidth`. JPEG and PNG sources also get a WebP version, which browsers prefer; AVIF, WebP, and GIF sources are served as-is.
 
 ```yaml {filename="params.yaml"}
 image:
@@ -39,7 +37,7 @@ image:
   quality: 82 # WebP quality, 1-100
 ```
 
-Set `webp: false` to serve only the original format. Hugo caches the generated variants between builds.
+Set `webp: false` to serve only the original format.
 
 ## Date localization
 

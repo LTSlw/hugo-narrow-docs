@@ -89,7 +89,3 @@ comments:
 ## 主题跟随
 
 主题值留空，或使用对应组件的“跟随系统”值时会实时跟随站点明暗切换：giscus 为 `preferred_color_scheme`，utterances 为 `preferred-color-scheme`，artalk 为 `auto`。Comentario 仅在 `theme` 留空时跟随。设成固定值时不跟随，避免覆盖你的显式选择。
-
-## 自定义 provider
-
-把 `provider` 设成任意名字，并在站点的 `layouts/_partials/features/comments/<名字>.html` 放一个同名 partial 即可。站点模板优先于主题，partial 会收到 `Page`、`Site`、`id` 和 `config`（`provider` 对应的配置块）四个参数。

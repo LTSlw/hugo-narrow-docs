@@ -89,7 +89,3 @@ Otherwise the comments section shows a short "not configured" notice.
 ## Following the theme
 
 Comments follow the site's light/dark switch live when the theme value is left empty, or when it uses the provider's "follow system" value: `preferred_color_scheme` for giscus, `preferred-color-scheme` for utterances, and `auto` for artalk. Comentario follows the site only when `theme` is empty. A fixed value disables the sync so your explicit choice is not overridden.
-
-## Custom provider
-
-Set `provider` to any name and add `layouts/_partials/features/comments/<name>.html` to your site. Your partial takes precedence over the theme and receives a dict with `Page`, `Site`, `id`, and `config` (the block matching `provider`).
