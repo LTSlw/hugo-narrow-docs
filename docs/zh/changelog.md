@@ -7,17 +7,17 @@ title: "更新日志"
 ## v2.1.0 - 2026-10-25
 
 - refactor!: 评论参数 `comments.system` 改名为 `comments.provider`，站点配置和页面 frontmatter 都需要同步修改。
-- refactor: 评论和统计的 provider 按名称动态分发；站点放一个同名 partial 即可扩展，未知名称会输出构建警告。
-- feat: 搜索改用 MiniSearch + `Intl.Segmenter`，无空格语言按词切分；搜索脚本拆为独立入口，关闭搜索时不再加载并输出空索引。
+- refactor: 评论和统计 provider 增加必填项校验，未知名称或缺少配置时输出构建警告。
+- feat: 搜索改用 MiniSearch，无空格语言按词切分；关闭搜索时不再加载搜索脚本，索引输出为空。
 - feat: 图片响应式宽度改为按 `contentWidth` 推导，JPEG/PNG 额外生成 WebP；新增 `image.webp` 和 `image.quality`。
 - feat: 文章页面包屑向下滚动隐藏，向上滚动收起为标题胶囊，点击胶囊平滑展开为原面包屑。
-- feat: 图库间距、列数等布局参数可在 `params.gallery` 统一设置并按页面覆盖；smart-gallery 改为本地打包，布局切换合并为单个循环按钮。
-- feat: 标签页的 tablist 改由短代码输出，无 JS 时第一个面板仍可读，`tabs.js` 只负责状态和键盘。
+- feat: 图库间距、列数等布局参数可在 `params.gallery` 统一设置并按页面覆盖；布局切换合并为单个循环按钮。
+- feat: 标签页在禁用 JS 时仍能显示第一个面板。
 - feat: 适配 iOS 安全区；触摸设备上放大 Dock、系列步骤、图库切换、搜索清除和通知关闭按钮。
 - fix: giscus 要求同时配置 `repo`、`repoId`、`categoryId`；统计 provider 缺少必填项时不再输出空脚本，改为构建警告。
 - fix: 关闭搜索时索引输出为空数组，不再导致构建失败。
 - fix: 图库布局按钮通过 `aria-label` 播报当前布局。
-- fix: Twikoo 跳过首次主题同步，只响应后续主题切换。
+- fix: Twikoo 不再在首次加载时闪烁错误的主题。
 - fix: 修正 Go 模块路径为 `github.com/tom2almighty/hugo-narrow/v2`。
 - ci: 新增格式检查、`compiled.css` 产物一致性和示例站点构建检查，PR 同样触发。
 - chore: 新增孟加拉语翻译。
