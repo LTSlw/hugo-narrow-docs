@@ -17,14 +17,26 @@ lightbox:
 
 Each gallery has a single layout button in its top-right corner. Clicking it cycles through `justified` → `masonry` → `grid`. The choice applies to that gallery group only and resets to `defaultLayout` on reload.
 
-`gap`, `targetRowHeight`, `lastRowBehavior`, `columnWidth`, and `columns` use theme defaults; most sites do not need to set them. Override them in page front matter when needed:
+The layout values can be set site-wide and overridden per page. Unset keys keep the theme defaults shown here:
+
+```yaml {filename="params.yaml"}
+gallery:
+  enabled: true
+  defaultLayout: justified # justified | masonry | grid
+  gap: 10 # px between items, all layouts
+  targetRowHeight: 200 # justified: target row height
+  lastRowBehavior: center # justified: left | center | right | fill | hide
+  columnWidth: 200 # masonry when columns is auto
+  columns: 4 # grid count; masonry accepts a number or auto
+```
+
+`columns: auto` derives the column count from `columnWidth`, which keeps masonry and grid readable on narrow screens. Page front matter accepts the same keys:
 
 ```yaml {filename="gallery-post.md"}
 gallery:
-  enabled: true
   defaultLayout: masonry
+  columns: auto
   gap: 12
-  columns: 3
 lightbox:
   enabled: true
 ```
