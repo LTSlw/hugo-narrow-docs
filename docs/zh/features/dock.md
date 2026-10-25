@@ -17,7 +17,7 @@ Dock 是主题唯一的页面功能入口，包含首页、菜单、搜索、目
 ```yaml {filename="params.yaml"}
 comments:
   enabled: true
-  system: "giscus"
+  provider: "giscus"
 ```
 
 ## 搜索

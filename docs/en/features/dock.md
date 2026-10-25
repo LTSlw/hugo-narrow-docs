@@ -17,7 +17,7 @@ Placement is fixed; there is no display-mode parameter:
 ```yaml {filename="params.yaml"}
 comments:
   enabled: true
-  system: "giscus"
+  provider: "giscus"
 ```
 
 ## Search
