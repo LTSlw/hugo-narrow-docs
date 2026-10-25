@@ -114,7 +114,7 @@ mainSections: ["posts", "projects", "pages"]
 
 ## 搜索
 
-搜索索引在构建时生成，可以调整每篇文章写入索引的字符数，也可以整体关闭搜索。
+搜索索引在构建时生成，可以调整每篇文章写入索引的字符数，也可以整体关闭搜索；关闭后索引输出为空。
 
 ```yaml {filename="config/_default/params.yaml"}
 search:
